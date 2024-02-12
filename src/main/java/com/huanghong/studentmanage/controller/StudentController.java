@@ -5,6 +5,8 @@ import com.huanghong.studentmanage.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author pdai
  */
@@ -37,6 +39,12 @@ public class StudentController {
     @DeleteMapping
     public void delete(@RequestParam Long id){
         studentService.delete(id);
+    }
+
+    @GetMapping("/list")
+    public List<Student> list( ) {
+        List<Student> students=studentService.list();
+        return students;
     }
 
 }

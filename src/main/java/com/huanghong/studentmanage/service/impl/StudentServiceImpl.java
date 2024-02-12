@@ -1,7 +1,8 @@
-package com.huanghong.studentmanage.service;
+package com.huanghong.studentmanage.service.impl;
 
 import com.huanghong.studentmanage.dao.StudentDao;
 import com.huanghong.studentmanage.pojo.Student;
+import com.huanghong.studentmanage.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,5 +45,9 @@ public class StudentServiceImpl implements StudentService {
         studentDao.delete(id);
     }
 
-
+    @Override
+    public List<Student> list() {
+        List<Student> studentList= studentDao.list();
+        return studentList;
+    }
 }

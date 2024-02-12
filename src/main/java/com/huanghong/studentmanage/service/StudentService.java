@@ -2,6 +2,8 @@ package com.huanghong.studentmanage.service;
 
 import com.huanghong.studentmanage.pojo.Student;
 
+import java.util.List;
+
 public interface StudentService {
     /**
      * 创建学生
@@ -20,4 +22,10 @@ public interface StudentService {
 
     void delete(Long id);
 
+
+    /**
+     * 查询所有学生信息
+     * @return 所有学生信息
+     */
+    List<Student> list();
 }
