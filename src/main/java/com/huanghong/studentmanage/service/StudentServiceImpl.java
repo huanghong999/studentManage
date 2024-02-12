@@ -5,6 +5,8 @@ import com.huanghong.studentmanage.pojo.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * user service impl. 写业务逻辑的
  *
@@ -24,5 +26,16 @@ public class StudentServiceImpl implements StudentService {
             throw new RuntimeException("student age is invalid.");
         }
         return studentDao.insertStudent(student);
+    }
+
+    @Override
+    public Student find(Long id) {
+        List<Student> studentList= studentDao.list();
+        for (Student s : studentList) {
+            if (s.getId().equals(id)) {
+                return s;
+            }
+        }
+        return null;
     }
 }

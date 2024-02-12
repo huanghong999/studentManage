@@ -22,4 +22,9 @@ public class StudentDaoImpl implements StudentDao {
         }
         return studentList.add(student);
     }
+
+    @Override
+    public List<Student> list() {
+        return studentList;
+    }
 }

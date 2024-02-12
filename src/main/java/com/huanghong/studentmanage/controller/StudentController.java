@@ -26,6 +26,11 @@ public class StudentController {
         System.out.println("student = " + student);
         studentService.insertStudent(student);
         return student.getId();
+    }
 
+    @GetMapping
+    public Student find(@RequestParam Long id) {
+        Student student=studentService.find(id);
+        return student;
     }
 }

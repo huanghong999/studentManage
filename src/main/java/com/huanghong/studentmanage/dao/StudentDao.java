@@ -2,6 +2,8 @@ package com.huanghong.studentmanage.dao;
 
 import com.huanghong.studentmanage.pojo.Student;
 
+import java.util.List;
+
 /**
  * Student 数据访问层
  */
@@ -12,4 +14,10 @@ public interface StudentDao {
      * @return 是否创建成功
      */
     boolean insertStudent(Student student);
+
+    /**
+     * 获取所有学生信息
+     * @return
+     */
+    List<Student> list();
 }
