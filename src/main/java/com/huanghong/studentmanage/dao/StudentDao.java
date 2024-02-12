@@ -17,7 +17,13 @@ public interface StudentDao {
 
     /**
      * 获取所有学生信息
-     * @return
+     * @return 学生列表
      */
     List<Student> list();
+
+    /**
+     * 根据学生id删除学生信息
+     */
+   void delete(Long studentId);
+
 }

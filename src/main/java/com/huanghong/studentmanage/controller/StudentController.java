@@ -33,4 +33,10 @@ public class StudentController {
         Student student=studentService.find(id);
         return student;
     }
+
+    @DeleteMapping
+    public void delete(@RequestParam Long id){
+        studentService.delete(id);
+    }
+
 }

@@ -38,4 +38,11 @@ public class StudentServiceImpl implements StudentService {
         }
         return null;
     }
+
+    @Override
+    public void delete(Long id) {
+        studentDao.delete(id);
+    }
+
+
 }

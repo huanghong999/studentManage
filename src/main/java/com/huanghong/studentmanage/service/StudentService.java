@@ -16,4 +16,8 @@ public interface StudentService {
      * @return Student信息，如果没查到返回null
      */
     Student find(Long id);
+
+
+    void delete(Long id);
+
 }
