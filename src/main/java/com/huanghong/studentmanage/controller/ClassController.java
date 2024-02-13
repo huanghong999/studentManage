@@ -17,12 +17,13 @@ public class ClassController {
 
     /**
      * 插入班级
+     *
      * @param clazz 班级信息
      * @return 是否插入成功
      */
     @PostMapping
     public Long insert(@RequestBody Clazz clazz) {
-        log.info("[clazz] insert clazzId={},name={}",clazz.getId(),clazz.getName());
+        log.info("[clazz] insert clazzId={},name={}", clazz.getId(), clazz.getName());
         clazzService.insertClazz(clazz);
         return clazz.getId();
     }
@@ -37,21 +38,21 @@ public class ClassController {
     @GetMapping("/list")
     public List<Clazz> list() {
         log.info("查询所有班级信息...");
-        List<Clazz> clazzs= clazzService.list();
+        List<Clazz> clazzs = clazzService.list();
         return clazzs;
     }
 
     @DeleteMapping
     public void deleteClazz(@RequestParam Long id) {
-        log.info("开始删除班级，班级id等于{}",id);
+        log.info("开始删除班级，班级id等于{}", id);
         clazzService.deleteClazz(id);
     }
 
 
     @PutMapping
-    public void updateClazz(@RequestParam Long id,String name){
-        log.info("根据班级id{}修改班级名称{}",id,name);
-        clazzService.updateClazz(id,name);
+    public void updateClazz(@RequestParam Long id, String name) {
+        log.info("根据班级id{}修改班级名称{}", id, name);
+        clazzService.updateClazz(id, name);
     }
 
 

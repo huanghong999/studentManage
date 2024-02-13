@@ -43,9 +43,9 @@ public class ClazzServiceImpl extends ServiceImpl<ClazzDao, Clazz> implements Cl
 
     @Override
     public void updateClazz(Long id, String name) {
-        if(id!=null&name!=null){
-            clazzDao.updateClazz(id,name);
-        }else{
+        if (id != null & name != null) {
+            clazzDao.updateClazz(id, name);
+        } else {
             throw new RuntimeException("id或name为空");
         }
 
