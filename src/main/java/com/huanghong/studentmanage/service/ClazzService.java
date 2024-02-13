@@ -28,4 +28,18 @@ public interface ClazzService extends IService<Clazz> {
      List<Clazz> list();
 
 
+    /**
+     * 根据班级id删除班级信息
+     * @param id 班级id
+     */
+    void deleteClazz(Long id);
+
+    /**
+     * 根据班级id修改班级名称
+     * @param id 班级id
+     * @param name 班级名称
+     */
+    void updateClazz(Long id,String name);
+
+
 }

@@ -41,4 +41,18 @@ public class ClassController {
         return clazzs;
     }
 
+    @DeleteMapping
+    public void deleteClazz(@RequestParam Long id) {
+        log.info("开始删除班级，班级id等于{}",id);
+        clazzService.deleteClazz(id);
+    }
+
+
+    @PutMapping
+    public void updateClazz(@RequestParam Long id,String name){
+        log.info("根据班级id{}修改班级名称{}",id,name);
+        clazzService.updateClazz(id,name);
+    }
+
+
 }

@@ -25,5 +25,18 @@
         from clazz
         where id = #{id}
     </select>
+    
+    
+    <delete id="deleteClazz">
+        delete from clazz
+        where id=#{id}
+    </delete>
+
+    <update id="updateClazz" >
+        update clazz
+        set name=#{name}
+        where id=#{id}
+    </update>
+
 
 </mapper>

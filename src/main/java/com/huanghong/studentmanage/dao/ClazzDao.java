@@ -27,7 +27,14 @@ public interface ClazzDao extends BaseMapper<Clazz> {
      */
     Clazz findClazz(Long id);
 
+    void deleteClazz(Long clazzId);
 
+    /**
+     * 根据班级id修改班级名称
+     * @param id 班级id
+     * @param name 班级名称
+     */
+    void updateClazz(Long id,String name);
 
 
 }
