@@ -2,6 +2,7 @@ package com.huanghong.studentmanage.controller;
 
 import com.huanghong.studentmanage.pojo.Student;
 import com.huanghong.studentmanage.service.StudentService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,6 +13,7 @@ import java.util.List;
  */
 @RestController
 @RequestMapping("/student")
+@Slf4j
 public class StudentController {
 
     @Autowired
@@ -25,7 +27,7 @@ public class StudentController {
      */
     @PostMapping
     public Long insert(@RequestBody Student student) {
-        System.out.println("student = " + student);
+        log.info("[student] insert studentId={},name={}",student.getId(),student.getName());
         studentService.insertStudent(student);
         return student.getId();
     }
